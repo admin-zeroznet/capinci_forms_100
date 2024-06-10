@@ -1,0 +1,180 @@
+{
+	"_version": "1.40.0",
+	"sap.app": {
+		"id": "forms.profil_adm",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "@sap-ux/fiori-elements-writer:lrop",
+			"version": "0.3.6",
+			"toolsId": "33df4669-e8ad-4b66-909f-b90068671417"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "FORMS_100/forms/profil_adm/v1/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"annotation"
+					],
+					"localUri": "localService/metadata.xml",
+					"odataVersion": "4.0"
+				}
+			},
+			"annotation": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/annotation.xml",
+				"settings": {
+					"localUri": "annotations/annotation.xml"
+				}
+			}
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"forms-profil_adm-inbound": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "PROFIL_ADM",
+					"action": "action",
+					"title": "{{flpTitle}}",
+					"subTitle": "{{flpSubtitle}}",
+					"icon": ""
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": true,
+		"dependencies": {
+			"minUI5Version": "1.109.3",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ushell": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "forms.profil_adm.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "ProfilesList",
+					"target": "ProfilesList"
+				},
+				{
+					"pattern": "Profiles({key}):?query:",
+					"name": "ProfilesObjectPage",
+					"target": "ProfilesObjectPage"
+				}
+			],
+			"targets": {
+				"ProfilesList": {
+					"type": "Component",
+					"id": "ProfilesList",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"entitySet": "Profiles",
+							"variantManagement": "Page",
+							"initialLoad": "Enabled",
+							"navigation": {
+								"Profiles": {
+									"detail": {
+										"route": "ProfilesObjectPage"
+									}
+								}
+							}
+						}
+					}
+				},
+				"ProfilesObjectPage": {
+					"type": "Component",
+					"id": "ProfilesObjectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"entitySet": "Profiles",
+							"editableHeaderContent": false,
+							"controlConfiguration": {
+								"mfk_profilestasks/@com.sap.vocabularies.UI.v1.LineItem": {
+									"tableSettings": {
+										"creationMode": {
+											"createAtEnd": true
+										},
+										"quickVariantSelection": {
+											"showCounts": false,
+											"hideTableTitle": true
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {}
+			}
+		}
+	},
+	"sap.fiori": {
+		"registrationIds": [],
+		"archeType": "transactional"
+	}
+}

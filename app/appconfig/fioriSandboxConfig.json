@@ -1,0 +1,177 @@
+{
+	"services": {
+		"LaunchPage": {
+			"adapter": {
+				"config": {
+					"groups": [
+						{
+							"id": "partners",
+							"title": "partners",
+							"isPreset": true,
+							"isVisible": true,
+							"isGroupLocked": false,
+							"tiles": [
+								{
+									"id": "ORGANZ_ADM",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "ORGANZ_ADM",
+										"title": "Organizations",
+										"info": "ORGANZ_ADM",
+										"targetURL": "#ORGANZ_ADM-start",
+										"icon": "sap-icon://building"
+									}
+								}
+							]
+						},
+						{
+							"id": "roledeployment",
+							"title": "roledeployment",
+							"isPreset": true,
+							"isVisible": true,
+							"isGroupLocked": false,
+							"tiles": [
+								{
+									"id": "DEPLOY_EXE",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "DEPLOY_EXE",
+										"title": "Deploy Roles",
+										"info": "DEPLOY_EXE",
+										"targetURL": "#DEPLOY_EXE-start",
+										"icon": "sap-icon://sap-logo-shape"
+									}
+								}
+							]
+						},
+						{
+							"id": "rolemanagement",
+							"title": "rolemanagement",
+							"isPreset": true,
+							"isVisible": true,
+							"isGroupLocked": false,
+							"tiles": [
+								{
+									"id": "PROFIL_ADM",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "PROFIL_ADM",
+										"title": "Profiles",
+										"info": "PROFIL_ADM",
+										"targetURL": "#PROFIL_ADM-start",
+										"icon": "sap-icon://workflow-tasks"
+									}
+								},
+								{
+									"id": "STRUCT_ADM",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "STRUCT_ADM",
+										"title": "Structures",
+										"info": "STRUCT_ADM",
+										"targetURL": "#STRUCT_ADM-start",
+										"icon": "sap-icon://building"
+									}
+								},
+								{
+									"id": "ROLESM_ADM",
+									"size": "1x1",
+									"tileType": "sap.ushell.ui.tile.StaticTile",
+									"properties": {
+										"chipId": "ROLESM_ADM",
+										"title": "Roles",
+										"info": "ROLESM_ADM",
+										"targetURL": "#ROLESM_ADM-start",
+										"icon": "sap-icon://role"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		},
+		"NavTargetResolution": {
+			"config": {
+				"enableClientSideTargetResolution": true
+			}
+		},
+		"ClientSideTargetResolution": {
+			"adapter": {
+				"config": {
+					"inbounds": {
+						"ORGANZ_ADM": {
+							"semanticObject": "ORGANZ_ADM",
+							"action": "start",
+							"resolutionResult": {
+								"applicationType": "SAPUI5",
+								"additionalInformation": "SAPUI5.Component=pmo.organz_adm",
+								"url": "/ORGANZ_ADM/webapp"
+							},
+							"signature": {
+								"parameters": {},
+								"additionalParameters": "allowed"
+							}
+						},
+						"DEPLOY_EXE": {
+							"semanticObject": "DEPLOY_EXE",
+							"action": "start",
+							"resolutionResult": {
+								"applicationType": "SAPUI5",
+								"additionalInformation": "SAPUI5.Component=forms.deploy_exe",
+								"url": "/DEPLOY_EXE/webapp"
+							},
+							"signature": {
+								"parameters": {},
+								"additionalParameters": "allowed"
+							}
+						},
+						"PROFIL_ADM": {
+							"semanticObject": "PROFIL_ADM",
+							"action": "start",
+							"resolutionResult": {
+								"applicationType": "SAPUI5",
+								"additionalInformation": "SAPUI5.Component=forms.profil_adm",
+								"url": "/PROFIL_ADM/webapp"
+							},
+							"signature": {
+								"parameters": {},
+								"additionalParameters": "allowed"
+							}
+						},
+						"STRUCT_ADM": {
+							"semanticObject": "STRUCT_ADM",
+							"action": "start",
+							"resolutionResult": {
+								"applicationType": "SAPUI5",
+								"additionalInformation": "SAPUI5.Component=forms.struct_adm",
+								"url": "/STRUCT_ADM/webapp"
+							},
+							"signature": {
+								"parameters": {},
+								"additionalParameters": "allowed"
+							}
+						},
+						"ROLESM_ADM": {
+							"semanticObject": "ROLESM_ADM",
+							"action": "start",
+							"resolutionResult": {
+								"applicationType": "SAPUI5",
+								"additionalInformation": "SAPUI5.Component=forms.rolesm_adm",
+								"url": "/ROLESM_ADM/webapp"
+							},
+							"signature": {
+								"parameters": {},
+								"additionalParameters": "allowed"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
